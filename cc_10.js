@@ -77,6 +77,13 @@ class Inventory {  // creates inventory class
             console.log(order.getOrderDetails());  // Log the details
          });
     }
+
+    restockProduct(productId, quantity) { // Task 5: adds restockProduct method
+        const product = this.products.find(p => p.id === productId); // finds the product through the productId
+        if (product) {
+            product.stock += quantity; // adds the quantity to the stock
+        }
+    }
 }
 
 const inventory = new Inventory(); // creates the constant for new inventory
@@ -88,3 +95,8 @@ inventory.listProducts(); // Expected output: "Product: Laptop, ID: 101, Price: 
 inventory.placeOrder(601, prod1, 2); // adds new order
 inventory.listOrders(); // Expected output: "Order ID: 601, Product: Laptop, Quantity: 2, Total Price: $2400"
 console.log(prod1.getDetails()); // Expected output: "Product: Laptop, ID: 101, Price: $1200, Stock: 3"
+
+// Task 5: Implementing Product Restocking - see task 3 for code //
+
+inventory.restockProduct(101, 5); // restocks product 101 by qty 5
+console.log(prod1.getDetails()); // Expected output: "Product: Laptop, ID: 101, Price $1200, Stock: 8"
