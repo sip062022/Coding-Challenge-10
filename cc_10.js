@@ -35,7 +35,7 @@ class Order { // Creates class Order
     }
 
     getOrderDetails () {
-        const totalPrice = this.product.price * this.quantity; // forumla to calculate total price for 1st test case
+        const totalPrice = this.product.price * this.quantity; // formula to calculate total price for 1st test case
         return `Order ID: ${this.orderID}, Product: ${this.product.name}, Quantity: ${this.quantity}, Total Price: $${totalPrice}`; // returns data as a string
     }
 }
@@ -79,14 +79,14 @@ class Inventory {  // creates inventory class
     }
 
     restockProduct(productId, quantity) { // Task 5: adds restockProduct method
-        const product = this.products.find(p => p.id === productId); // finds the product through the productId
+        const product = this.products.find(x => x.id === productId); // finds the product through the productId
         if (product) {
             product.stock += quantity; // adds the quantity to the stock
         }
     }
 }
 
-const inventory = new Inventory(); // creates the constant for new inventory
+const inventory = new Inventory(); // Task 3 Test Data: creates the constant for new inventory
 inventory.addProducts(prod1); // adds prod1 to inventory
 inventory.listProducts(); // Expected output: "Product: Laptop, ID: 101, Price: $1200, Stock: 5"
 
