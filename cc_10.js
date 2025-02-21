@@ -36,7 +36,7 @@ class Order { // Creates class Order
 
     getOrderDetails () {
         const totalPrice = this.product.price * this.quantity; // forumla to calculate total price for 1st test case
-        return `Order ID: ${this.orderID}, ${this.product.name}, Quantity: ${this.quantity}, Total Price: $${totalPrice}`; // returns data as a string
+        return `Order ID: ${this.orderID}, Product: ${this.product.name}, Quantity: ${this.quantity}, Total Price: $${totalPrice}`; // returns data as a string
     }
 }
 
